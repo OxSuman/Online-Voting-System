@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Voting System</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        #headerSection {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            font-family: 'Georgia', serif;
+        }
+
+        #headerSection h1 {
+            margin: 0;
+        }
+
+        #bodySection {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 110px);
+            padding-top: 20px;
+        }
+
+        form {
+            background: white;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            max-width: 100%;
+        }
+
+        form h3 {
+            margin-top: 0;
+            color: #333;
+            font-family: 'Helvetica', sans-serif;
+        }
+
+        .form-row {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .form-row input {
+            width: 48%;
+        }
+
+        form input, form select {
+            width: 100%;
+            padding: 0.75em;
+            margin: 0.5em 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        form button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 0.75em;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        form p {
+            text-align: center;
+        }
+
+        form a {
+            color: #4CAF50;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        form a:hover {
+            text-decoration: underline;
+            color: #45a049;
+        }
+
+        label {
+            display: block;
+            margin: 0.5em 0;
+        }
+
+        input[type="file"] {
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="headerSection">
+        <h1>Online Voting System</h1>
+    </div>
+    <div id="bodySection">
+        <form action="../api/register.php" method="post" enctype="multipart/form-data">
+            <h3>Registration</h3>
+            <div class="form-row">
+                <input type="text" name="name" placeholder="Enter name">
+                <input type="number" name="mobile" placeholder="Enter mobile">
+            </div>
+            <div class="form-row">
+                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="cpassword" placeholder="Confirm Password">
+            </div>
+            <input type="text" name="address" placeholder="Address">
+            <label for="photo">Upload image:</label>
+            <input type="file" name="photo">
+            <label for="role">Select role:</label>
+            <select name="role" id="">
+                <option value="1">Voter</option>
+                <option value="2">Group</option>
+            </select>
+            <button>Register</button>
+            <p>Already a user? <a href="../index.html">Login here</a></p>
+        </form>
+    </div>
+</body>
+</html>
